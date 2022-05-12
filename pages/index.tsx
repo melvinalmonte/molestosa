@@ -101,7 +101,7 @@ const Home: NextPage = () => {
           {chartType === BARCHART && <Bar options={barOptions} data={data} />}
           {chartType === VBARCHART && <Bar options={options} data={data} />}
         </Box>
-        <HStack>
+        <HStack padding={2}>
           <IconButton
             aria-label="line-chart"
             icon={<RiLineChartLine />}
