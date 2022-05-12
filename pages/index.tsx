@@ -96,6 +96,11 @@ const Home: NextPage = () => {
   return (
     <Container padding={4}>
       <Flex direction={"column"}>
+        <Box>
+          {chartType === LINECHART && <Line options={options} data={data} />}
+          {chartType === BARCHART && <Bar options={barOptions} data={data} />}
+          {chartType === VBARCHART && <Bar options={options} data={data} />}
+        </Box>
         <HStack>
           <IconButton
             aria-label="line-chart"
@@ -113,11 +118,6 @@ const Home: NextPage = () => {
             onClick={() => setChartType(VBARCHART)}
           />
         </HStack>
-        <Box>
-          {chartType === LINECHART && <Line options={options} data={data} />}
-          {chartType === BARCHART && <Bar options={barOptions} data={data} />}
-          {chartType === VBARCHART && <Bar options={options} data={data} />}
-        </Box>
       </Flex>
     </Container>
   );
